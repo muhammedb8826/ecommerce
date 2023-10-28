@@ -1,0 +1,142 @@
+.favourite {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  color: white;
+  font-size: 1.5em;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.menu-bar {
+  display: none;
+}
+
+.menu-bar.active {
+  position: absolute;
+  top: 4em;
+  display: block;
+  list-style: none;
+  padding: 1em;
+  width: 100%;
+  background-color: white;
+  border-radius: 0.5em;
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2);
+  height: calc(100vh - 4em);
+}
+
+.menu-bar li {
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2em;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+li a {
+  color: #231651;
+  text-decoration: none;
+}
+
+li a:hover {
+  color: #4dccbd;
+}
+
+.menu-toggle-btn {
+  position: absolute;
+  left: 1em;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 1.5em;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+  }
+  .menu-toggle-btn {
+    display: none;
+  }
+
+  .logo {
+    left: 1em;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+
+  .menu-bar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    width: calc(100% - 9em);
+    background-color: transparent;
+    box-shadow: none;
+    position: relative;
+    left: 8em;
+  }
+
+  .menu-bar li {
+    padding: 0;
+    color: white;
+    margin: 0 1em;
+    font-weight: bold;
+    font-size: 1em;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .menu-bar li a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .menu-bar li a:hover {
+    color: var(--fifth-color);
+  }
+
+  li:last-child {
+    position: absolute;
+    right: 0;
+    margin-right: 0;
+  }
+
+  .right-arrow {
+    display: none;
+  }
+
+  .favourite {
+    right: 4em;
+  }
+}
