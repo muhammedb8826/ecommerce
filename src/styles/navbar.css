@@ -1,6 +1,6 @@
 .favourite {
   position: absolute;
-  right: 0;
+  right: 0.5em;
   top: 50%;
   transform: translate(-50%, -50%);
   background: transparent;
@@ -62,7 +62,7 @@ li a:hover {
 
 .menu-toggle-btn {
   position: absolute;
-  left: 1em;
+  left: 1.5em;
   top: 50%;
   transform: translate(-50%, -50%);
   background: transparent;

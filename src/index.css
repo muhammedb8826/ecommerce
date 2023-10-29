@@ -35,8 +35,38 @@ body {
 nav {
   position: relative;
   color: white;
-  padding: 2em 0;
+  padding: 1.5em 0;
   width: 100%;
   max-width: var(--container-width);
   margin: auto;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1em;
+}
+
+.search-btn {
+  position: relative;
+  width: 100%;
+  max-width: var(--container-width);
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  border-radius: 0.2em;
+  outline: none;
+  font-size: 1em;
+  padding: 0.6em;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-btn:hover {
+  background-color: #231651d7;
+  transition: all 0.3s ease-in-out;
 }

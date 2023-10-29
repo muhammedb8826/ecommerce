@@ -1,0 +1,20 @@
+.search-icon {
+  -webkit-transform: rotate(90deg); /* For Safari */
+  transform: rotate(90deg);
+  margin-right: 0.5em;
+}
+
+.arrow-up.open {
+  right: 1.5em;
+  position: absolute;
+  font-size: 1.2em;
+  transition: all 0.3s ease-in-out;
+}
+
+.arrow-up.close {
+  right: 1.5em;
+  position: absolute;
+  font-size: 1.2em;
+  transform: rotate(180deg);
+  transition: all 0.3s ease-in-out;
+}
