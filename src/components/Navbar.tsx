@@ -17,7 +17,7 @@ const Navbar = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
   const handleToggle = () => {
-    setToggle((prev) => !prev);
+    setToggle(!toggle);
   };
   return (
     <nav>
@@ -34,19 +34,21 @@ const Navbar = () => {
       </button>
       <ul className={`menu-bar ${toggle ? 'active' : ''}`}>
         <li>
-          <Link to="/cars">Used and New Cars</Link>
+          <Link to="/cars" onClick={() => setToggle(false)}>
+            Used and New Cars
+          </Link>
           <BsArrowRight className="right-arrow" />
         </li>
         <li>
-          <Link to="/motorbikes">Motorbikes</Link>
+          <Link to="/trucks" onClick={() => setToggle(false)}>
+            Trucks
+          </Link>
           <BsArrowRight className="right-arrow" />
         </li>
         <li>
-          <Link to="/trucks">Trucks</Link>
-          <BsArrowRight className="right-arrow" />
-        </li>
-        <li>
-          <Link to="/language">English</Link>
+          <Link to="/language" onClick={() => setToggle(false)}>
+            English
+          </Link>
           <BsArrowRight className="right-arrow" />
         </li>
       </ul>
