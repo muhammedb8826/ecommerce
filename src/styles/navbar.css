@@ -142,6 +142,7 @@ li a.active {
   .menu-bar li a {
     color: white;
     text-decoration: none;
+    transition: all 0.3s ease-in-out;
   }
 
   .menu-bar li a.active {
@@ -161,21 +162,32 @@ li a.active {
     position: absolute;
     right: 0;
     margin-right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .right-arrow {
+  li .right-arrow {
     display: none;
   }
 
   .favourite {
-    right: 5em;
+    right: 6em;
+    transition: all 0.3s ease-in-out;
   }
 
   .favourite.active {
-    right: 4em;
+    right: 5em;
     color: #231651;
     background-color: #fff;
-    padding: 0.5em;
+    padding: 0.3em;
     border-radius: 0.2em;
+  }
+
+  .favourite:hover {
+    right: 5em;
+    padding: 0.3em;
+    border-radius: 0.2em;
+    border: 1px solid #fff;
   }
 }

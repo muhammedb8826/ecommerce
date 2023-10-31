@@ -4,6 +4,7 @@ import { FaStar } from 'react-icons/fa';
 import { BsArrowRight } from 'react-icons/bs';
 import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { IoIosArrowDown } from 'react-icons/io';
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -47,7 +48,7 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink to="/language" onClick={() => setToggle(false)}>
-            English
+            English <IoIosArrowDown className="down-arrow"></IoIosArrowDown>
           </NavLink>
           <BsArrowRight className="right-arrow" />
         </li>
