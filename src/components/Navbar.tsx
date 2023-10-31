@@ -21,7 +21,9 @@ const Navbar = () => {
   };
   return (
     <nav>
-      <div className="logo">Logo</div>
+      <div className="logo">
+        <Link to="/">Logo</Link>
+      </div>
       <button
         type="button"
         aria-label="Toggle Menu"
@@ -32,19 +34,19 @@ const Navbar = () => {
       </button>
       <ul className={`menu-bar ${toggle ? 'active' : ''}`}>
         <li>
-          <Link to="#">Used and New Cars</Link>
+          <Link to="/cars">Used and New Cars</Link>
           <BsArrowRight className="right-arrow" />
         </li>
         <li>
-          <Link to="#">Motorbikes</Link>
+          <Link to="/motorbikes">Motorbikes</Link>
           <BsArrowRight className="right-arrow" />
         </li>
         <li>
-          <Link to="#">Trucks</Link>
+          <Link to="/trucks">Trucks</Link>
           <BsArrowRight className="right-arrow" />
         </li>
         <li>
-          <Link to="#">English</Link>
+          <Link to="/language">English</Link>
           <BsArrowRight className="right-arrow" />
         </li>
       </ul>

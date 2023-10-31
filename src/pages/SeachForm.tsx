@@ -1,5 +1,9 @@
 const SeachForm = () => {
-  return <div>search form</div>;
+  return (
+    <div>
+      <h1>Search form is going to be here</h1>
+    </div>
+  );
 };
 
 export default SeachForm;
