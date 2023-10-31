@@ -2,7 +2,7 @@ import '../styles/navbar.css';
 import { RiCloseLine, RiMenuLine } from 'react-icons/ri';
 import { FaStar } from 'react-icons/fa';
 import { BsArrowRight } from 'react-icons/bs';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 const Navbar = () => {
@@ -22,7 +22,7 @@ const Navbar = () => {
   return (
     <nav>
       <div className="logo">
-        <Link to="/">Logo</Link>
+        <NavLink to="/">Logo</NavLink>
       </div>
       <button
         type="button"
@@ -34,27 +34,27 @@ const Navbar = () => {
       </button>
       <ul className={`menu-bar ${toggle ? 'active' : ''}`}>
         <li>
-          <Link to="/cars" onClick={() => setToggle(false)}>
+          <NavLink to="/cars" onClick={() => setToggle(false)}>
             Used and New Cars
-          </Link>
+          </NavLink>
           <BsArrowRight className="right-arrow" />
         </li>
         <li>
-          <Link to="/trucks" onClick={() => setToggle(false)}>
+          <NavLink to="/trucks" onClick={() => setToggle(false)}>
             Trucks
-          </Link>
+          </NavLink>
           <BsArrowRight className="right-arrow" />
         </li>
         <li>
-          <Link to="/language" onClick={() => setToggle(false)}>
+          <NavLink to="/language" onClick={() => setToggle(false)}>
             English
-          </Link>
+          </NavLink>
           <BsArrowRight className="right-arrow" />
         </li>
       </ul>
-      <Link to="/favorites" className="favourite">
+      <NavLink to="/favorites" className="favourite">
         <FaStar />
-      </Link>
+      </NavLink>
     </nav>
   );
 };

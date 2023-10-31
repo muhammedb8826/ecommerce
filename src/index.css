@@ -35,7 +35,7 @@ body {
 nav {
   position: relative;
   color: white;
-  padding: 1.5em 0;
+  height: 70px;
   width: 100%;
   max-width: var(--container-width);
   margin: auto;

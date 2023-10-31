@@ -38,7 +38,7 @@
 
 .menu-bar.active {
   position: absolute;
-  top: 3em;
+  top: 4.5em;
   display: block;
   list-style: none;
   padding: 1em;
@@ -46,7 +46,7 @@
   background-color: white;
   border-radius: 0.5em;
   box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2);
-  height: calc(100vh - 3em);
+  height: calc(100vh - 4.5em);
   z-index: 1;
 }
 
@@ -59,6 +59,7 @@
   letter-spacing: 0.1em;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  color: #231651;
 }
 
 li a {
@@ -66,8 +67,12 @@ li a {
   text-decoration: none;
 }
 
-li a:hover {
-  color: #4dccbd;
+li a.active {
+  background-color: #231651;
+  color: #fff;
+  width: 100%;
+  padding: 0.5em;
+  border-radius: 0.5em;
 }
 
 .menu-toggle-btn {
@@ -84,6 +89,12 @@ li a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.right-arrow {
+  position: absolute;
+  display: block;
+  right: 2.5em;
 }
 
 @media (min-width: 768px) {
@@ -114,6 +125,7 @@ li a:hover {
     box-shadow: none;
     position: relative;
     left: 8em;
+    height: 100%;
   }
 
   .menu-bar li {
@@ -132,8 +144,17 @@ li a:hover {
     text-decoration: none;
   }
 
+  .menu-bar li a.active {
+    color: #231651;
+    background-color: #fff;
+    padding: 0.5em;
+    border-radius: 0.2em;
+  }
+
   .menu-bar li a:hover {
-    color: var(--fifth-color);
+    padding: 0.5em;
+    border-radius: 0.2em;
+    border: 1px solid #fff;
   }
 
   li:last-child {
@@ -147,6 +168,14 @@ li a:hover {
   }
 
   .favourite {
+    right: 5em;
+  }
+
+  .favourite.active {
     right: 4em;
+    color: #231651;
+    background-color: #fff;
+    padding: 0.5em;
+    border-radius: 0.2em;
   }
 }
