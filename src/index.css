@@ -35,7 +35,7 @@ body {
 nav {
   position: relative;
   color: white;
-  padding: 1.5em 0;
+  height: 70px;
   width: 100%;
   max-width: var(--container-width);
   margin: auto;
@@ -69,4 +69,24 @@ nav {
 .search-btn:hover {
   background-color: #231651d7;
   transition: all 0.3s ease-in-out;
+}
+.search-form {
+  display: none;
+}
+
+.search-form-hidden {
+  display: none;
+}
+
+.search-form-visible {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .search-btn {
+    display: none;
+  }
+  .search-form {
+    display: block;
+  }
 }
