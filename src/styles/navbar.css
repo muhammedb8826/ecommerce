@@ -97,6 +97,10 @@ li a.active {
   right: 2.5em;
 }
 
+.down-arrow {
+  display: none;
+}
+
 @media (min-width: 768px) {
   nav {
     display: flex;
@@ -165,6 +169,10 @@ li a.active {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .down-arrow {
+    display: inline-block;
   }
 
   li .right-arrow {
