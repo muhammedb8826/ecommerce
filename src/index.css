@@ -3,7 +3,7 @@
   --second-color: #4dccbd;
   --third-color: #2374ab;
   --fourth-color: #ff8484;
-  --fifth-color: #d6fff6;
+  --fifth-color: #dcdcdc;
   --container-width: 1200px;
 }
 
@@ -88,5 +88,9 @@ nav {
   }
   .search-form {
     display: block;
+  }
+
+  .filter-search {
+    width: 25%;
   }
 }
