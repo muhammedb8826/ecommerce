@@ -1,6 +1,6 @@
 :root {
   --main-color: #231651;
-  --second-color: #4dccbd;
+  --second-color: #f4f4f4;
   --third-color: #2374ab;
   --fourth-color: #ff8484;
   --fifth-color: #dcdcdc;
@@ -19,7 +19,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  background-color: #f4f4f4;
+  background-color: var(--second-color);
 }
 
 .app {
@@ -169,5 +169,9 @@ nav {
 
   .select-options .select-item {
     width: 100%;
+  }
+
+  .last-search-container {
+    flex-direction: row;
   }
 }
