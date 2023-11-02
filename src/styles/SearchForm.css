@@ -7,3 +7,8 @@
   max-width: var(--container-width);
   transition: all 0.3s ease-in-out;
 }
+
+.select-options {
+  display: flex;
+  flex-wrap: wrap;
+}

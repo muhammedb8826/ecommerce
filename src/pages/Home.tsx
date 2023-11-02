@@ -1,5 +1,5 @@
 import SearchButton from './SearchButton';
-import SeachForm from './SeachForm';
+import SearchForm from './SearchForm';
 import { useState } from 'react';
 const Home = () => {
   const [showSearchBox, setShowSearchBox] = useState(false);
@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <section className="home">
       <SearchButton handleClick={handleClick} showSearchBox={showSearchBox} />
-      <SeachForm showSearchBox={showSearchBox} />
+      <SearchForm showSearchBox={showSearchBox} />
     </section>
   );
 };
