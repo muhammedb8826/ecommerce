@@ -1,5 +1,5 @@
-import FilterSearch from '../components/FilterSearch';
-import SelectOptions from '../components/SelectOptions';
+import FilterSearch from './FilterSearch';
+import SelectOptions from './SelectOptions';
 import '../styles/SearchForm.css';
 type SeachFormProps = {
   showSearchBox: boolean;

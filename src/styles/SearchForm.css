@@ -12,3 +12,8 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.selected {
+  position: absolute;
+  top: 68px;
+}

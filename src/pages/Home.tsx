@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import '../styles/Home.css';
-import SearchButton from './SearchButton';
-import SearchForm from './SearchForm';
+import SearchButton from '../components/SearchButton';
+import SearchForm from '../components/SearchForm';
 import { useState } from 'react';
 import { BsSearch } from 'react-icons/bs';
 import { LiaCarSideSolid } from 'react-icons/lia';
