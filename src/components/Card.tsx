@@ -1,13 +1,27 @@
 import { NavLink } from 'react-router-dom';
 import '../styles/Card.css';
+import { SlLocationPin } from 'react-icons/sl';
+import { IoIosArrowRoundForward } from 'react-icons/io';
 import { CardData } from '../utils/CardData';
+import { useState } from 'react';
 
 const Card = () => {
+  const [expanded, setExpanded] = useState(4);
+
+  const handleExpand = () => {
+    setExpanded(expanded + 4);
+  };
+
+  console.log(expanded);
+  console.log(CardData.length);
+
+  const slicedData = CardData.slice(0, expanded);
+
   return (
     <div className="card-section">
       <h2>Top Cars</h2>
       <div className="card-container">
-        {CardData.map((card) => (
+        {slicedData.map((card) => (
           <NavLink to="#" className="card" key={card.id}>
             <div className="card-image">
               <img src={card.image} alt="" />
@@ -21,8 +35,10 @@ const Card = () => {
               </div>
               <div className="card-footer">
                 <span className="tag">{card.tag}</span>
-                <p>
-                  <span>icon</span>
+                <p className="location">
+                  <span>
+                    <SlLocationPin />
+                  </span>
                   {card.location}
                 </p>
               </div>
@@ -30,8 +46,17 @@ const Card = () => {
           </NavLink>
         ))}
       </div>
-      <button type="button" className="see-more-btn">
-        +More vehicles
+      <button type="button" className="see-more-btn" onClick={handleExpand}>
+        {expanded >= CardData.length ? (
+          <NavLink to="/cars" className="new-search-link">
+            Nothing found?{' '}
+            <span>
+              Start a new search <IoIosArrowRoundForward className="icon" />
+            </span>
+          </NavLink>
+        ) : (
+          ' + More vehicles'
+        )}
       </button>
     </div>
   );

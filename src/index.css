@@ -201,4 +201,8 @@ nav {
     max-width: 50px;
     max-height: 50px;
   }
+
+  .new-search-link {
+    font-size: 0.8em;
+  }
 }
