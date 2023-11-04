@@ -44,12 +44,31 @@
 
 .card .card-image span {
   position: absolute;
-  top: 0;
-  right: 0;
-  padding: 0.5em;
-  background-color: var(--main-color);
-  color: white;
+  top: 0.2em;
+  right: 0.2em;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
   font-size: 0.8em;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-size: 1.2em;
+  padding: 0.2em;
+}
+
+.unfavorite {
+  fill: none;
+  stroke: black;
+  stroke-width: 25px;
+}
+
+.favorite {
+  fill: var(--main-color);
+  stroke: none;
 }
 
 .card .card-content {
