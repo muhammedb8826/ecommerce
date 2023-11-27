@@ -4,7 +4,7 @@
   --third-color: #2374ab;
   --fourth-color: #ff8484;
   --fifth-color: #dcdcdc;
-  --container-width: 1200px;
+  --container-width: 1100px;
 }
 
 *,
@@ -176,7 +176,6 @@ nav {
   }
 
   .card-section .card-container {
-    display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }

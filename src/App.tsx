@@ -8,9 +8,9 @@ import Favorites from './pages/Favorites';
 const App = () => {
   return (
     <div className="app">
-      <div className="nav-container">
+      <header className="nav-container">
         <Navbar />
-      </div>
+      </header>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cars" element={<Cars />} />
