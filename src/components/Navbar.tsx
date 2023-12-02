@@ -5,8 +5,15 @@ import { BsArrowRight } from 'react-icons/bs';
 import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { IoIosArrowDown } from 'react-icons/io';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
+  console.log(
+    useSelector((store) => {
+      console.log(store);
+    })
+  );
+
   const [toggle, setToggle] = useState(false);
   useEffect(() => {
     const handleResize = () => {

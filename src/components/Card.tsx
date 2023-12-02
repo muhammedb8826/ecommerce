@@ -2,15 +2,16 @@ import { NavLink } from 'react-router-dom';
 import '../styles/Card.css';
 import { SlLocationPin } from 'react-icons/sl';
 import { IoIosArrowRoundForward } from 'react-icons/io';
-import { CardData } from '../utils/CardData';
 import { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
 
 type Favorite = {
   id: string | number;
 };
 
 const Card = () => {
+  const cardData = useSelector((store) => store.card);
   const [expanded, setExpanded] = useState(4);
   const [favorites, setFavorites] = useState<Favorite[]>([]);
 
