@@ -5,7 +5,7 @@ const initialState = {
   isLoading: true,
 };
 
-const url = 'http://localhost:8000/card';
+const url = 'http://localhost:3000/card';
 
 export const getCardItems = createAsyncThunk('card/getCardItems', async () => {
   try {

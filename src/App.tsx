@@ -4,6 +4,8 @@ import Trucks from './pages/Trucks';
 import { Routes, Route } from 'react-router-dom'; // Routes and Route are components from react-router-dom
 import Navbar from './components/Navbar';
 import Favorites from './pages/Favorites';
+import Details from './pages/Details';
+import './styles/main.css';
 
 const App = () => {
   return (
@@ -14,6 +16,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cars" element={<Cars />} />
+        <Route path="/cars/:id" element={<Details />} />
         <Route path="/trucks" element={<Trucks />} />
         <Route path="/favorites" element={<Favorites />} />
       </Routes>

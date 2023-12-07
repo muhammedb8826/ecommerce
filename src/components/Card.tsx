@@ -7,8 +7,25 @@ import { FaStar } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
 import { getCardItems } from '../redux/features/card/cardSlice';
 
+type RootState = {
+  card: {
+    cardItems: Card[];
+    isLoading: boolean;
+  };
+};
+
 type Favorite = {
   id: string | number;
+};
+
+type Card = {
+  id: string | number;
+  price: number;
+  title: string;
+  description: string;
+  image: string;
+  tag: string;
+  location: string;
 };
 
 const Card = () => {
@@ -19,7 +36,9 @@ const Card = () => {
 
   const [expanded, setExpanded] = useState(4);
   const [favorites, setFavorites] = useState<Favorite[]>([]);
-  const { cardItems, isLoading } = useSelector((store) => store.card);
+  const { cardItems, isLoading } = useSelector(
+    (store: RootState) => store.card
+  );
 
   const handleExpand = () => {
     setExpanded(expanded + 4);
@@ -44,11 +63,15 @@ const Card = () => {
 
   const slicedData = cardItems.slice(0, expanded);
 
+  if (isLoading) {
+    return <h1>Loading...</h1>;
+  }
+
   return (
     <div className="card-section">
       <h2>Top Cars</h2>
       <div className="card-container">
-        {slicedData.map((card) => (
+        {slicedData.map((card: Card) => (
           <NavLink to={`cars/${card.id}`} className="card" key={card.id}>
             <div className="card-image">
               <img src={card.image} alt="" />
