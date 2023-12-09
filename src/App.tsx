@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Favorites from './pages/Favorites';
 import Details from './pages/Details';
 import './styles/main.css';
+import NotFound from './pages/NotFound';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/cars/:id" element={<Details />} />
         <Route path="/trucks" element={<Trucks />} />
         <Route path="/favorites" element={<Favorites />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </main>
   );

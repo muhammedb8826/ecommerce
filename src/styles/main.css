@@ -28,6 +28,12 @@ body {
   min-height: 100vh;
 }
 
+.wrapper {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
 .nav-container {
   width: 100%;
   background-color: var(--main-color);
