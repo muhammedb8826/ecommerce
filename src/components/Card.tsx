@@ -6,11 +6,15 @@ import { useState, useEffect } from 'react';
 import { FaStar } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
 import { getCardItems } from '../redux/features/card/cardSlice';
+import { AppDispatch } from '../redux/store';
 
 type RootState = {
   card: {
-    cardItems: Card[];
-    isLoading: boolean;
+    homePageData: {
+      data: [];
+      isLoading: boolean;
+      error: null;
+    };
   };
 };
 
@@ -29,16 +33,17 @@ type Card = {
 };
 
 const Card = () => {
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
+  const { data, isLoading, error } = useSelector(
+    (store: RootState) => store.card.homePageData
+  );
+
   useEffect(() => {
     dispatch(getCardItems());
-  }, []);
+  }, [dispatch]);
 
   const [expanded, setExpanded] = useState(4);
   const [favorites, setFavorites] = useState<Favorite[]>([]);
-  const { cardItems, isLoading } = useSelector(
-    (store: RootState) => store.card
-  );
 
   const handleExpand = () => {
     setExpanded(expanded + 4);
@@ -61,10 +66,14 @@ const Card = () => {
     setFavorites(newFavorites);
   };
 
-  const slicedData = cardItems.slice(0, expanded);
+  const slicedData = data.slice(0, expanded);
 
   if (isLoading) {
     return <h1>Loading...</h1>;
+  }
+
+  if (error) {
+    console.log(error);
   }
 
   return (
@@ -105,7 +114,7 @@ const Card = () => {
         ))}
       </div>
       <button type="button" className="see-more-btn" onClick={handleExpand}>
-        {expanded >= cardItems.length ? (
+        {expanded >= data.length ? (
           <NavLink to="/cars" className="new-search-link">
             Nothing found?{' '}
             <span>

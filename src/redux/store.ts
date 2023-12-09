@@ -6,3 +6,5 @@ export const store = configureStore({
     card: cardReducer,
   },
 });
+
+export type AppDispatch = typeof store.dispatch;

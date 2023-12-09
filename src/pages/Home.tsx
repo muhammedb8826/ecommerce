@@ -5,6 +5,7 @@ import { useState } from 'react';
 import LastSearch from '../components/LastSearch';
 import CurrentlyInDemand from '../components/CurrentlyInDemand';
 import Card from '../components/Card';
+
 const Home = () => {
   const [showSearchBox, setShowSearchBox] = useState(false);
   const handleClick = () => {

@@ -4,7 +4,7 @@ type ID = {
 
 const DetailsText = ({ id }: ID) => {
   return (
-    <div className="w-1/2 border border-sky-300">
+    <div className="md:w-1/2 border border-sky-300">
       information goes here {id}
     </div>
   );
