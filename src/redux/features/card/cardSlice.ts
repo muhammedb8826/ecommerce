@@ -52,8 +52,7 @@ const cardSlice = createSlice({
       })
       .addCase(getCardItems.rejected, (state, action) => {
         state.homePageData.isLoading = false;
-        state.homePageData.error = action.payload;
-        // console.log(action.payload);
+        state.detailsPageData.error = action.payload === null ? action.payload : null;
       })
       .addCase(getCardItem.pending, (state) => {
         state.detailsPageData.isLoading = true;
@@ -64,8 +63,7 @@ const cardSlice = createSlice({
       })
       .addCase(getCardItem.rejected, (state, action) => {
         state.detailsPageData.isLoading = false;
-        state.detailsPageData.error = action.payload;
-        // console.log(action.payload);
+        state.detailsPageData.error = action.payload === null ? action.payload : null;
       });
   },
 });
