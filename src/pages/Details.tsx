@@ -46,7 +46,7 @@ const Details = () => {
   }
 
   return (
-    <div className="wrapper p-3">
+    <div className="p-3">
       <NavLink to="/" className="hidden md:flex items-center mb-3 text-blue-500 text-sm">
         <span className="flex items-center">
           <IoIosArrowBack />

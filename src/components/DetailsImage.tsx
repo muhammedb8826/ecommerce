@@ -7,7 +7,7 @@ type DataType = {
 const DetailsImage = ({ image }: DataType) => {
   return (
     <div className="md:w-1/2">
-      <div className="relative w-full max-md:h-[400px] h-[500px] bg-gradient-to-r from-cyan-500 to-blue-500 mb-3 overflow-hidden">
+      <div className="relative w-full max-sm:h-72 max-md:h-96 h-[500px] bg-gradient-to-r from-cyan-500 to-blue-500 mb-3 overflow-hidden">
         <img src={image} alt="" className="w-full h-full object-cover" />
         <button
           type="button"

@@ -1,16 +1,17 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
+
 const initialState = {
   homePageData: {
     data: [],
     isLoading: true,
-    error: null,
+    error: "",
   },
   detailsPageData: {
     data: null,
     isLoading: true,
-    error: null,
+    error: "",
   },
 };
 
@@ -20,7 +21,7 @@ export const getCardItems = createAsyncThunk('card/getCardItems', async () => {
   try {
     const res = await axios.get(url);
     return res.data;
-  } catch (error) {
+  } catch (error) {  
     return error;
   }
 });
@@ -50,9 +51,9 @@ const cardSlice = createSlice({
         state.homePageData.isLoading = false;
         state.homePageData.data = action.payload;
       })
-      .addCase(getCardItems.rejected, (state, action) => {
+      .addCase(getCardItems.rejected, (state) => {
         state.homePageData.isLoading = false;
-        state.detailsPageData.error = action.payload === null ? action.payload : null;
+        state.detailsPageData.error = "Network Error"
       })
       .addCase(getCardItem.pending, (state) => {
         state.detailsPageData.isLoading = true;
@@ -61,9 +62,9 @@ const cardSlice = createSlice({
         state.detailsPageData.isLoading = false;
         state.detailsPageData.data = action.payload;
       })
-      .addCase(getCardItem.rejected, (state, action) => {
+      .addCase(getCardItem.rejected, (state) => {
         state.detailsPageData.isLoading = false;
-        state.detailsPageData.error = action.payload === null ? action.payload : null;
+        state.detailsPageData.error = "Network Error"
       });
   },
 });
