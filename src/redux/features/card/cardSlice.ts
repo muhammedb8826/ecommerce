@@ -16,7 +16,6 @@ const initialState = {
 };
 
 const url = 'http://localhost:3000/card';
-
 export const getCardItems = createAsyncThunk('card/getCardItems', async () => {
   try {
     const res = await axios.get(url);
@@ -37,6 +36,20 @@ export const getCardItem = createAsyncThunk(
     }
   }
 );
+
+export const addCardItem = createAsyncThunk(
+  'card/addCardItem',
+  async (item) => {
+    try {
+      console.log(item);
+      
+      const res = await axios.post(url, item);
+      return res.data;
+    } catch (error) {
+      return error;
+    }
+  }
+); 
 
 const cardSlice = createSlice({
   name: 'card',

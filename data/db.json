@@ -99,6 +99,84 @@
       "image": "https://images.unsplash.com/photo-1593055357429-62eaf3b259cc?auto=format&fit=crop&q=80&w=870&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "tag": "Dealer",
       "location": "Addis Ababa"
+    },
+    {
+      "title": "xvxv",
+      "description": "vcxv",
+      "price": "vcxvcx",
+      "location": "vxcvcx",
+      "tag": "private",
+      "formData": {},
+      "id": 11
+    },
+    {
+      "title": "Audi",
+      "description": "This is audi car",
+      "price": "1200",
+      "location": "Addis Ababa",
+      "tag": "private",
+      "formData": {},
+      "id": 12
+    },
+    {
+      "title": "dasd",
+      "description": "dad",
+      "price": "dsad",
+      "location": "sadsa",
+      "tag": "private",
+      "id": 13
+    },
+    {
+      "image": null,
+      "id": 14
+    },
+    {
+      "title": "sss",
+      "description": "This is audi car",
+      "price": "125",
+      "location": "Addis Ababa",
+      "tag": "",
+      "image": null,
+      "id": 15
+    },
+    {
+      "title": "dad",
+      "description": "vcxv",
+      "price": "125",
+      "location": "Addis Ababa",
+      "tag": "private",
+      "image": {},
+      "id": 16
+    },
+    {
+      "title": "Audi",
+      "description": "This is audi car",
+      "price": "1200",
+      "location": "Addis Ababa",
+      "tag": "dealer",
+      "image": {},
+      "id": 17
+    },
+    {
+      "title": "cvbc",
+      "description": "bvcb",
+      "price": "bvcb",
+      "location": "bvcb",
+      "tag": "private",
+      "image": {},
+      "id": 18
+    },
+    {
+      "title": "xcvc",
+      "description": "vcxvc",
+      "price": "vcxv",
+      "location": "vcxv",
+      "tag": "private",
+      "image": {},
+      "id": 19
     }
+  ],
+  "used_and_new_cars": [
+    {}
   ]
 }

@@ -26,7 +26,7 @@ const SelectOptions = () => {
     <>
       <select
         name="make"
-        className="select-item"
+        className="select-item border border-black"
         title="Select a make"
         onChange={handleMakeChange}
       >
@@ -40,7 +40,7 @@ const SelectOptions = () => {
 
       <select
         name="model"
-        className="select-item"
+        className="select-item border border-black"
         title="Select a make"
         onChange={handleModelChange}
       >
@@ -54,7 +54,7 @@ const SelectOptions = () => {
 
       <select
         name="year"
-        className="select-item"
+        className="select-item border border-black"
         title="Select a make"
         onChange={handleYearChange}
       >
@@ -68,7 +68,7 @@ const SelectOptions = () => {
 
       <select
         name="price"
-        className="select-item"
+        className="select-item border border-black"
         title="Select a make"
         onChange={handlePriceChange}
       >

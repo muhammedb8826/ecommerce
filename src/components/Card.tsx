@@ -80,7 +80,7 @@ const Card = () => {
 
   return (
     <div className="card-section">
-      <h2>Top Cars</h2>
+      <h2 className='text-2xl'>Top Cars</h2>
       <div className="card-container">
         {slicedData.map((card: Card) => (
           <NavLink to={`cars/${card.id}`} className="card" key={card.id}>
