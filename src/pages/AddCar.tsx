@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../redux/store";
-import { addCardItem } from "../redux/features/card/cardSlice";
+import { addUsedAndNewCars } from "../redux/features/card/cardSlice";
 
 const AddCars = () => {
 
@@ -15,7 +15,7 @@ const AddCars = () => {
     tag:"",
   })
   
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState<File | null>(null);
 
 const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
   setFormData({
@@ -34,8 +34,10 @@ const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
 }
 
 const handleImageChange = (e:React.ChangeEvent<HTMLInputElement>)=>{
-  const imageFile = e.target.files[0];
-  setImage(imageFile);
+  if (e.target.files) {
+    const imageFile = e.target.files[0];
+    setImage(imageFile);
+  }
   // const fd = new FormData();
   // fd.append('image', imageFile);
 }
@@ -44,14 +46,22 @@ const handleImageChange = (e:React.ChangeEvent<HTMLInputElement>)=>{
 const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault()
   const fd = new FormData();
-  if (image) {
-    fd.append('image', image);
-  }
-  const imageData = fd.get("image");
-  console.log(imageData);
-  
 
- dispatch(addCardItem({ ...formData, image: imageData }));
+  // Add all form data including image
+  Object.entries(formData).forEach(([key, value]) => fd.append(key, value));
+
+  if (image) {
+    fd.append('image', image); // Append image separately if needed
+  }
+
+  dispatch(addUsedAndNewCars(fd)); // Pass entire FormData object 
+  setFormData({
+    title: "",
+    description: "",
+    price: "",
+    location: "",
+    tag:"",
+  })
 }
 
   return (

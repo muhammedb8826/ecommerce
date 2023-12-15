@@ -38,11 +38,11 @@ const Details = () => {
   }, [dispatch, id]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (<div>Loading...</div>);
   }
 
   if (error) {
-    console.log(error);
+    (<div>{error}</div>)
   }
 
   return (

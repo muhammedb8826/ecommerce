@@ -73,8 +73,6 @@ const Card = () => {
   }
 
   if (error) {
-    console.log("dsdcsdcsd"+ error);
-    
     return <div>{error}</div>
   }
 

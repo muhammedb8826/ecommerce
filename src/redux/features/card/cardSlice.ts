@@ -13,9 +13,15 @@ const initialState = {
     isLoading: true,
     error: "",
   },
+  usedAndNewCarsPageData: {
+    data: [],
+    isLoading: true,
+    error: "",
+  },
 };
 
 const url = 'http://localhost:3000/card';
+const url2 = 'http://localhost:3000/used_and_new_cars';
 export const getCardItems = createAsyncThunk('card/getCardItems', async () => {
   try {
     const res = await axios.get(url);
@@ -37,13 +43,36 @@ export const getCardItem = createAsyncThunk(
   }
 );
 
-export const addCardItem = createAsyncThunk(
-  'card/addCardItem',
-  async (item) => {
+export const getUsedAndNewCars = createAsyncThunk(
+  'card/getUsedAndNewCars',
+  async () => {
     try {
-      console.log(item);
-      
-      const res = await axios.post(url, item);
+      const res = await axios.get(url2);
+      return res.data;
+    } catch (error) {
+      return error;
+    }
+  }
+);
+
+
+export const addUsedAndNewCars = createAsyncThunk(
+  'card/addUsedAndNewCars',
+  async (formData: FormData) => {
+    const { title, description, price, location, tag, image } = Object.fromEntries(formData);
+    console.log(formData);
+    try {
+      const data = {
+        title,
+        description,
+        price,
+        location,
+        tag,
+        image,
+      };
+
+
+      const res = await axios.post(url2, data);
       return res.data;
     } catch (error) {
       return error;
@@ -78,6 +107,28 @@ const cardSlice = createSlice({
       .addCase(getCardItem.rejected, (state) => {
         state.detailsPageData.isLoading = false;
         state.detailsPageData.error = "Network Error"
+      })
+      .addCase(getUsedAndNewCars.pending, (state) => {
+        state.usedAndNewCarsPageData.isLoading = true;
+      })
+      .addCase(getUsedAndNewCars.fulfilled, (state, action) => {
+        state.usedAndNewCarsPageData.isLoading = false;
+        state.usedAndNewCarsPageData.data = action.payload;
+      })
+      .addCase(getUsedAndNewCars.rejected, (state) => {
+        state.usedAndNewCarsPageData.isLoading = false;
+        state.usedAndNewCarsPageData.error = "Network Error"
+      })
+      .addCase(addUsedAndNewCars.pending, (state) => {
+        state.usedAndNewCarsPageData.isLoading = true;
+      })
+      .addCase(addUsedAndNewCars.fulfilled, (state, action) => {
+        state.usedAndNewCarsPageData.isLoading = false;
+        state.usedAndNewCarsPageData.data = action.payload;
+      })
+      .addCase(addUsedAndNewCars.rejected, (state) => {
+        state.usedAndNewCarsPageData.isLoading = false;
+        state.usedAndNewCarsPageData.error = "Network Error"
       });
   },
 });
