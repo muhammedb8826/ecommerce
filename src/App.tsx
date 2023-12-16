@@ -7,7 +7,8 @@ import Favorites from './pages/Favorites';
 import Details from './pages/Details';
 import './styles/main.css';
 import NotFound from './pages/NotFound';
-import AddCar from './pages/AddCar';
+import AddCar from './components/AddCar';
+import Language from './pages/Language';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/trucks" element={<Trucks />} />
         <Route path="/add-car" element={<AddCar />} />
         <Route path="/favorites" element={<Favorites />} />
+        <Route path="/language" element={<Language />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       </div>

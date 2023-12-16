@@ -7,6 +7,8 @@ import { FaStar } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
 import { getCardItems } from '../redux/features/card/cardSlice';
 import { AppDispatch } from '../redux/store';
+import ErrorComponent from './ErrorComponent';
+import LoadingComponent from './LoadingComponent';
 
 type RootState = {
   card: {
@@ -69,11 +71,16 @@ const Card = () => {
   const slicedData = data.slice(0, expanded);
 
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return (
+
+      <LoadingComponent />
+)
   }
 
   if (error) {
-    return <div>{error}</div>
+    return (
+      <ErrorComponent error={error} />
+)
   }
 
   return (

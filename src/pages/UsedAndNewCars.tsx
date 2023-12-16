@@ -2,6 +2,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch } from "../redux/store";
 import { getUsedAndNewCars } from "../redux/features/card/cardSlice";
 import { useEffect } from "react";
+import LoadingComponent from "../components/LoadingComponent";
+import ErrorComponent from "../components/ErrorComponent";
 
 
 type RootState = {
@@ -9,7 +11,7 @@ type RootState = {
     usedAndNewCarsPageData: {
       data: [];
       isLoading: boolean;
-      error: null;
+      error: "";
     };
   };
 };
@@ -29,21 +31,26 @@ type ItemType = {
 const UsedAndNewCars = () => {
   const dispatch: AppDispatch = useDispatch();
   const {data, isLoading, error} = useSelector((store: RootState) => store.card.usedAndNewCarsPageData);
+  console.log(data);
 
   useEffect(() => {
     dispatch(getUsedAndNewCars());
   }, [dispatch]);
 
   if (isLoading) {
-    return (<h1>Loading...</h1>);
+    return (
+    <LoadingComponent />
+      );
   }
 
   if (error) {
-    return (<h1>{error}</h1>);
+    return (
+      <ErrorComponent error={error} />
+    );
   }
 
   return (
-    <div>
+    <div className="wrapper">
       {data.map((item: ItemType) => (
         <div key={item.id}>
           <img src={item.image} alt="" />
