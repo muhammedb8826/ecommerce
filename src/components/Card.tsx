@@ -34,6 +34,7 @@ type Card = {
   location: string;
 };
 
+
 const Card = () => {
   const dispatch: AppDispatch = useDispatch();
   const { data, isLoading, error } = useSelector(
@@ -85,7 +86,7 @@ const Card = () => {
 
   return (
     <div className="card-section">
-      <h2 className='text-2xl'>Top Cars</h2>
+      <h2 className='text-2xl my-5'>Top Cars</h2>
       <div className="card-container">
         {slicedData.map((card: Card) => (
           <NavLink to={`cars/${card.id}`} className="card" key={card.id}>
@@ -122,7 +123,7 @@ const Card = () => {
       </div>
       <button type="button" className="see-more-btn" onClick={handleExpand}>
         {expanded >= data.length ? (
-          <NavLink to="/cars" className="new-search-link">
+          <NavLink to="/refine-search" className="new-search-link">
             Nothing found?{' '}
             <span>
               Start a new search <IoIosArrowRoundForward className="icon" />

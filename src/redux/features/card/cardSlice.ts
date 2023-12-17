@@ -8,7 +8,7 @@ const initialState = {
     error: "",
   },
   detailsPageData: {
-    data: null,
+    data: {},
     isLoading: true,
     error: "",
   },

@@ -5,6 +5,7 @@ import { useState } from 'react';
 import LastSearch from '../components/LastSearch';
 import CurrentlyInDemand from '../components/CurrentlyInDemand';
 import Card from '../components/Card';
+import UsedAndNewCars from './UsedAndNewCars';
 
 const Home = () => {
   const [showSearchBox, setShowSearchBox] = useState(false);
@@ -21,6 +22,7 @@ const Home = () => {
         <CurrentlyInDemand />
       </div>
       <Card />
+      <UsedAndNewCars />
     </section>
   );
 };

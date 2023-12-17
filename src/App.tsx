@@ -9,7 +9,8 @@ import './styles/main.css';
 import NotFound from './pages/NotFound';
 import AddCar from './components/AddCar';
 import Language from './pages/Language';
-import UsedAndNewCars from './pages/UsedAndNewCars';
+import RefineSearch from './components/RefineSearch';
+import UsedAndNewCarsDetails from './pages/UsedAndNewCarsDetails';
 
 const App = () => {
   return (
@@ -22,10 +23,12 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/cars" element={<Cars />} />
         <Route path="/cars/:id" element={<Details />} />
-        <Route path="/used-and-new-cars" element={<UsedAndNewCars />} />
+        <Route path="/used-and-new-cars" element={<Home />} />
+        <Route path="/used-and-new-cars/:id" element={<UsedAndNewCarsDetails />} />
         <Route path="/trucks" element={<Trucks />} />
         <Route path="/add-car" element={<AddCar />} />
         <Route path="/favorites" element={<Favorites />} />
+        <Route path="/refine-search" element={<RefineSearch />} />
         <Route path="/language" element={<Language />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

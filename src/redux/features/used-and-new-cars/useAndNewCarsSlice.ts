@@ -5,6 +5,7 @@ import axios from "axios";
 
 const initialState = {
     data: [],
+    details: {},
     isLoading: true,
     error: "",
 };
@@ -24,6 +25,19 @@ export const getUsedAndNewCars = createAsyncThunk(
   );
   
 
+  export const getUsedAndNewCar = createAsyncThunk(
+    'card/getUsedAndNewCar',
+    async (itemId: string | number, { rejectWithValue }) => {
+      try {
+        const res = await axios.get(`${url2}/${itemId}`);
+        return res.data;
+      } catch (error) {
+        return rejectWithValue(error);
+      }
+    }
+  );
+
+
 export const addUsedAndNewCars = createAsyncThunk(
     'card/addUsedAndNewCars',
     async (formData: FormData, { rejectWithValue }) => {
@@ -38,7 +52,6 @@ export const addUsedAndNewCars = createAsyncThunk(
           image,
           favorite: false,
         };
-        console.log(data);
         
         const response = await axios.post(url2, data);
         return response.data;
@@ -67,6 +80,24 @@ export const addUsedAndNewCars = createAsyncThunk(
           data: action.payload,
         }))
         .addCase(getUsedAndNewCars.rejected, (state, action) => {
+          const errorMessage = (action.payload instanceof Error) ? action.payload.message : 'An error occurred';
+          return {
+            ...state,
+            isLoading: false,
+            error: errorMessage,
+          };
+        })
+        .addCase(getUsedAndNewCar.pending, (state) => ({
+          ...state,
+          isLoading: true,
+          error: '',
+        }))
+        .addCase(getUsedAndNewCar.fulfilled, (state, action) => ({
+          ...state,
+          isLoading: false,
+          details: action.payload,
+        }))
+        .addCase(getUsedAndNewCar.rejected, (state, action) => {
           const errorMessage = (action.payload instanceof Error) ? action.payload.message : 'An error occurred';
           return {
             ...state,
