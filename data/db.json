@@ -171,6 +171,162 @@
       "image": {},
       "favorite": false,
       "id": 7
+    },
+    {
+      "carName": "Abdukaaa",
+      "description": "dskal;dd",
+      "price": "555",
+      "location": "Shashe",
+      "tag": "",
+      "image": {},
+      "favorite": false,
+      "id": 8
+    },
+    {
+      "carName": "dsadsa",
+      "description": "dsa",
+      "price": "77",
+      "location": "dsa",
+      "tag": "",
+      "image": {},
+      "favorite": false,
+      "id": 9
+    },
+    {
+      "carName": "czdc",
+      "description": "vzv",
+      "price": "333",
+      "location": "zdvz",
+      "tag": "",
+      "image": {},
+      "favorite": false,
+      "id": 10
+    },
+    {
+      "carName": "chnagrt",
+      "description": "mn,mn",
+      "price": "6566",
+      "location": "mnm,",
+      "tag": "",
+      "image": {},
+      "favorite": false,
+      "id": 11
+    },
+    {
+      "carName": "hhh",
+      "description": "nj,n",
+      "price": "",
+      "location": "hhj",
+      "tag": "",
+      "favorite": false,
+      "id": 12
+    },
+    {
+      "carName": "push",
+      "description": "hhhh",
+      "price": "55",
+      "location": "",
+      "tag": "",
+      "image": {},
+      "favorite": false,
+      "id": 13
+    },
+    {
+      "carName": "bhb",
+      "description": "bnmb",
+      "price": "77",
+      "location": "Addis Ababa",
+      "tag": "",
+      "favorite": false,
+      "id": 14
+    },
+    {
+      "carName": "mamam",
+      "description": "dd",
+      "price": "22",
+      "location": "2222",
+      "tag": "",
+      "favorite": false,
+      "id": 15
+    },
+    {
+      "carName": "last",
+      "description": "bnvn",
+      "price": "88",
+      "location": "hhh",
+      "tag": "dealer",
+      "image": {},
+      "favorite": false,
+      "id": 16
+    },
+    {
+      "carName": "removed",
+      "description": "ddd",
+      "price": "333",
+      "location": "ddd",
+      "tag": "",
+      "favorite": false,
+      "id": 17
+    },
+    {
+      "carName": "Removed3",
+      "description": "Muhammed",
+      "price": "333",
+      "location": "Muhammed",
+      "tag": "dealer",
+      "image": {},
+      "favorite": false,
+      "id": 18
+    },
+    {
+      "carName": "11111",
+      "description": "111",
+      "price": "111",
+      "location": "1111",
+      "tag": "dealer",
+      "image": {},
+      "favorite": false,
+      "id": 19
+    },
+    {
+      "carName": "22",
+      "description": "22",
+      "price": "22",
+      "location": "22",
+      "tag": "dealer",
+      "image": {},
+      "favorite": false,
+      "id": 20
+    },
+    {
+      "carName": "sss",
+      "description": "sss",
+      "price": "222",
+      "location": "sss",
+      "tag": "dealer",
+      "image": {},
+      "favorite": false,
+      "id": 21
+    },
+    {
+      "carName": "mame",
+      "description": "mame",
+      "price": "44",
+      "location": "mame",
+      "tag": "dealer",
+      "image": {},
+      "favorite": false,
+      "id": 22
+    },
+    {
+      "carName": "rrr",
+      "description": "sss",
+      "price": "22",
+      "location": "22",
+      "tag": "dealer",
+      "image": {},
+      "favorite": false,
+      "id": 23
     }
   ]
 }

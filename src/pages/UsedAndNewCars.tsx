@@ -1,20 +1,18 @@
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch } from "../redux/store";
-import { getUsedAndNewCars } from "../redux/features/card/cardSlice";
+import { getUsedAndNewCars } from "../redux/features/used-and-new-cars/useAndNewCarsSlice";
 import { useEffect } from "react";
 import LoadingComponent from "../components/LoadingComponent";
 import ErrorComponent from "../components/ErrorComponent";
 
 
 type RootState = {
-  card: {
-    usedAndNewCarsPageData: {
-      data: [];
-      isLoading: boolean;
-      error: "";
+  useAndNewCars: {
+      data: [],
+      isLoading: boolean,
+      error: "",
     };
   };
-};
 
 type ItemType = {
   id: string;
@@ -30,7 +28,7 @@ type ItemType = {
 
 const UsedAndNewCars = () => {
   const dispatch: AppDispatch = useDispatch();
-  const {data, isLoading, error} = useSelector((store: RootState) => store.card.usedAndNewCarsPageData);
+  const {data, isLoading, error} = useSelector((store: RootState) => store.useAndNewCars);
   console.log(data);
 
   useEffect(() => {

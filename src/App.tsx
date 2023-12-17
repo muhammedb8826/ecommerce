@@ -9,6 +9,7 @@ import './styles/main.css';
 import NotFound from './pages/NotFound';
 import AddCar from './components/AddCar';
 import Language from './pages/Language';
+import UsedAndNewCars from './pages/UsedAndNewCars';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/cars" element={<Cars />} />
         <Route path="/cars/:id" element={<Details />} />
+        <Route path="/used-and-new-cars" element={<UsedAndNewCars />} />
         <Route path="/trucks" element={<Trucks />} />
         <Route path="/add-car" element={<AddCar />} />
         <Route path="/favorites" element={<Favorites />} />

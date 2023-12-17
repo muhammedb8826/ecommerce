@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../redux/store";
-import { addUsedAndNewCars } from "../redux/features/card/cardSlice";
+import { addUsedAndNewCars } from "../redux/features/used-and-new-cars/useAndNewCarsSlice";
 
 const AddCars = () => {
   const dispatch: AppDispatch = useDispatch();
