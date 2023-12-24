@@ -8,6 +8,7 @@ import Card from '../components/Card';
 import UsedAndNewCars from './UsedAndNewCars';
 
 const Home = () => {
+
   const [showSearchBox, setShowSearchBox] = useState(false);
   const handleClick = () => {
     setShowSearchBox(!showSearchBox);

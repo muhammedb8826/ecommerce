@@ -11,7 +11,7 @@ const Search = ({ handleClick, showSearchBox }: SearchProps) => {
   return (
     <button
       onClick={handleClick}
-      className="search-btn"
+      className="search-btn max-md:bg-[#231651]"
       type="button"
       title="search-collabsable-button"
     >
