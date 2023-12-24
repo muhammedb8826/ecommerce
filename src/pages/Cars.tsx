@@ -1,6 +1,6 @@
 const Cars = () => {
   return (
-    <div>
+    <div className="cars">
       <h1>New Cars and Old Cars Page</h1>
     </div>
   );
