@@ -11,7 +11,6 @@ type SeachFormProps = {
 type RootState = {
   card: {
     homePageData: {
-      data: [];
       searchResults: [];
       isLoading: boolean;
       error: null;

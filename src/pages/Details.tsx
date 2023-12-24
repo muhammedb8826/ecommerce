@@ -8,6 +8,7 @@ import { getCardItem } from '../redux/features/card/cardSlice';
 import { useEffect } from 'react';
 import LoadingComponent from '../components/LoadingComponent';
 import ErrorComponent from '../components/ErrorComponent';
+import BackButton from '../components/BackButton';
 
 type RootState = {
   card: {
@@ -53,12 +54,7 @@ const Details = () => {
 
   return (
     <div className="p-3">
-      <NavLink to="/" className="hidden md:flex items-center mb-3 text-blue-500 text-sm">
-        <span className="flex items-center">
-          <IoIosArrowBack />
-        </span>
-        Back
-      </NavLink>
+<BackButton />
       <div className="md:flex justify-between gap-5">
         <DetailsImage image={data.image} />
         <DetailsText data={data}  />
