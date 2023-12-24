@@ -63,7 +63,7 @@ export const addUsedAndNewCars = createAsyncThunk(
   ); 
 
 
-  const useAndNewCarsSlice = createSlice({
+  const usedAndNewCarsSlice = createSlice({
     name: 'useAndNewCars',
     initialState,
     reducers: {},
@@ -125,4 +125,4 @@ export const addUsedAndNewCars = createAsyncThunk(
     },
   });
 
-    export default useAndNewCarsSlice.reducer;
+    export default usedAndNewCarsSlice.reducer;

@@ -2,6 +2,7 @@ import FilterSearch from './FilterSearch';
 import SelectOptions from './SelectOptions';
 import '../styles/SearchForm.css';
 import { useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 
 type SeachFormProps = {
   showSearchBox: boolean;
@@ -19,7 +20,7 @@ type RootState = {
 };
 
 
-const SearchForm = ({ showSearchBox }: SeachFormProps) => {
+const SearchFormButton = ({ showSearchBox }: SeachFormProps) => {
   
   const {searchResults } = useSelector(
     (store: RootState) => store.card.homePageData
@@ -34,11 +35,11 @@ const SearchForm = ({ showSearchBox }: SeachFormProps) => {
       <FilterSearch />
       <div className="select-options">
         <SelectOptions />
-        <div className="result-btn">{searchResults.length} results</div>
+        <NavLink to={"/search-result"} className="result-btn">{searchResults.length} results</NavLink>
         <div className="refine-search">Refine search</div>
       </div>
     </div>
   );
 };
 
-export default SearchForm;
+export default SearchFormButton;

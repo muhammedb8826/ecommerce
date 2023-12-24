@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch } from "../redux/store";
-import { getUsedAndNewCars } from "../redux/features/used-and-new-cars/useAndNewCarsSlice";
+import { getUsedAndNewCars } from "../redux/features/used-and-new-cars/usedAndNewCarsSlice";
 import { useEffect, useState } from "react";
 import LoadingComponent from "../components/LoadingComponent";
 import ErrorComponent from "../components/ErrorComponent";

@@ -4,7 +4,7 @@ import LoadingComponent from "../components/LoadingComponent";
 import { AppDispatch } from "../redux/store";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useParams } from "react-router-dom";
-import { getUsedAndNewCar } from "../redux/features/used-and-new-cars/useAndNewCarsSlice";
+import { getUsedAndNewCar } from "../redux/features/used-and-new-cars/usedAndNewCarsSlice";
 import { IoIosArrowBack } from "react-icons/io";
 import DetailsImage from "../components/DetailsImage";
 import DetailsText from "../components/DetailsText";

@@ -121,7 +121,7 @@ const Card = () => {
           </NavLink>
         ))}
       </div>
-      <button type="button" className="see-more-btn" onClick={handleExpand}>
+      <button type="button" className="see-more-btn bg-white p-4" onClick={handleExpand}>
         {expanded >= data.length ? (
           <NavLink to="/refine-search" className="new-search-link">
             Nothing found?{' '}

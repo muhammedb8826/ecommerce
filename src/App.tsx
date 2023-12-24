@@ -11,6 +11,7 @@ import AddCar from './components/AddCar';
 import Language from './pages/Language';
 import RefineSearch from './components/RefineSearch';
 import UsedAndNewCarsDetails from './pages/UsedAndNewCarsDetails';
+import SearchResultPage from './pages/SearchResultPage';
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
         <Route path="/trucks" element={<Trucks />} />
         <Route path="/add-car" element={<AddCar />} />
         <Route path="/favorites" element={<Favorites />} />
+        <Route path="/search-result" element={<SearchResultPage />} />
         <Route path="/refine-search" element={<RefineSearch />} />
         <Route path="/language" element={<Language />} />
         <Route path="*" element={<NotFound />} />

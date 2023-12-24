@@ -7,7 +7,7 @@ type SearchProps = {
   showSearchBox: boolean;
 };
 
-const Search = ({ handleClick, showSearchBox }: SearchProps) => {
+const SearchButton = ({ handleClick, showSearchBox }: SearchProps) => {
   return (
     <button
       onClick={handleClick}
@@ -26,4 +26,4 @@ const Search = ({ handleClick, showSearchBox }: SearchProps) => {
   );
 };
 
-export default Search;
+export default SearchButton;
