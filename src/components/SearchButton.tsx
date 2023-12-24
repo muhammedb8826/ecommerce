@@ -7,11 +7,11 @@ type SearchProps = {
   showSearchBox: boolean;
 };
 
-const Search = ({ handleClick, showSearchBox }: SearchProps) => {
+const SearchButton = ({ handleClick, showSearchBox }: SearchProps) => {
   return (
     <button
       onClick={handleClick}
-      className="search-btn"
+      className="search-btn max-md:bg-[#231651]"
       type="button"
       title="search-collabsable-button"
     >
@@ -26,4 +26,4 @@ const Search = ({ handleClick, showSearchBox }: SearchProps) => {
   );
 };
 
-export default Search;
+export default SearchButton;
