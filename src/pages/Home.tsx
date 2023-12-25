@@ -15,7 +15,7 @@ const Home = () => {
   };
 
   return (
-    <section className="home">
+    <section className="home" id='header'>
       <SearchButton handleClick={handleClick} showSearchBox={showSearchBox} />
       <SearchFormButton showSearchBox={showSearchBox} />
       <div className="last-search-container">

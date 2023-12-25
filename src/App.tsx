@@ -12,6 +12,7 @@ import Language from './pages/Language';
 import RefineSearch from './components/RefineSearch';
 import UsedAndNewCarsDetails from './pages/UsedAndNewCarsDetails';
 import SearchResultPage from './pages/SearchResultPage';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
@@ -35,6 +36,9 @@ const App = () => {
         <Route path="*" element={<NotFound />} />
       </Routes>
       </div>
+      <footer className='wrapper'>
+        <Footer />
+      </footer>
     </main>
   );
 };
