@@ -35,7 +35,7 @@ const SearchFormButton = ({ showSearchBox }: SeachFormProps) => {
       <div className="select-options">
         <SelectOptions />
         <NavLink to={"/search-result"} className="result-btn">{searchResults.length} results</NavLink>
-        <div className="refine-search">Refine search</div>
+        <NavLink to="/refine-search" className="refine-search">Refine search</NavLink>
       </div>
     </div>
   );

@@ -122,15 +122,6 @@
     }
   ],
   "used_and_new_cars": [
-    {
-      "carName": "Toyota",
-      "description": "This toyota car is 2020 model",
-      "price": "7,000",
-      "location": "Shashemene",
-      "tag": "",
-      "image": {},
-      "favorite": false,
-      "id": 1
-    }
+    
   ]
 }

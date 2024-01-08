@@ -10,7 +10,7 @@ const AddCars = () => {
     carName: "",
     price: "",
     description: "",
-    tag: "",
+    tag: "private",
     location: "",
   });
 
@@ -172,6 +172,7 @@ const AddCars = () => {
                 </label>
                 <div className="mt-2">
                   <select
+                    value={formData.tag}
                     id="tag"
                     name="tag"
                     onChange={handleSelectChange}
