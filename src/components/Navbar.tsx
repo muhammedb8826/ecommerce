@@ -2,8 +2,9 @@ import '../styles/navbar.css';
 import { RiCloseLine, RiMenuLine } from 'react-icons/ri';
 import { FaStar } from 'react-icons/fa';
 import { BsArrowRight } from 'react-icons/bs';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { IoIosArrowDown } from 'react-icons/io';
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -17,12 +18,12 @@ const Navbar = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
   const handleToggle = () => {
-    setToggle((prev) => !prev);
+    setToggle(!toggle);
   };
   return (
     <nav>
       <div className="logo">
-        <Link to="/">Logo</Link>
+        <NavLink to="/">Logo</NavLink>
       </div>
       <button
         type="button"
@@ -34,25 +35,27 @@ const Navbar = () => {
       </button>
       <ul className={`menu-bar ${toggle ? 'active' : ''}`}>
         <li>
-          <Link to="/cars">Used and New Cars</Link>
+          <NavLink to="/cars" onClick={() => setToggle(false)}>
+            Used and New Cars
+          </NavLink>
           <BsArrowRight className="right-arrow" />
         </li>
         <li>
-          <Link to="/motorbikes">Motorbikes</Link>
+          <NavLink to="/trucks" onClick={() => setToggle(false)}>
+            Trucks
+          </NavLink>
           <BsArrowRight className="right-arrow" />
         </li>
         <li>
-          <Link to="/trucks">Trucks</Link>
-          <BsArrowRight className="right-arrow" />
-        </li>
-        <li>
-          <Link to="/language">English</Link>
+          <NavLink to="/language" onClick={() => setToggle(false)}>
+            English <IoIosArrowDown className="down-arrow"></IoIosArrowDown>
+          </NavLink>
           <BsArrowRight className="right-arrow" />
         </li>
       </ul>
-      <Link to="/favorites" className="favourite">
+      <NavLink to="/favorites" className="favourite">
         <FaStar />
-      </Link>
+      </NavLink>
     </nav>
   );
 };
