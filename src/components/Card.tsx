@@ -2,17 +2,24 @@ import { NavLink } from 'react-router-dom';
 import '../styles/Card.css';
 import { SlLocationPin } from 'react-icons/sl';
 import { IoIosArrowRoundForward } from 'react-icons/io';
-import { CardData } from '../utils/CardData';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FaStar } from 'react-icons/fa';
+import { useSelector, useDispatch } from 'react-redux';
+import { getCardItems } from '../redux/features/card/cardSlice';
 
 type Favorite = {
   id: string | number;
 };
 
 const Card = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getCardItems());
+  }, []);
+
   const [expanded, setExpanded] = useState(4);
   const [favorites, setFavorites] = useState<Favorite[]>([]);
+  const { cardItems, isLoading } = useSelector((store) => store.card);
 
   const handleExpand = () => {
     setExpanded(expanded + 4);
@@ -35,7 +42,7 @@ const Card = () => {
     setFavorites(newFavorites);
   };
 
-  const slicedData = CardData.slice(0, expanded);
+  const slicedData = cardItems.slice(0, expanded);
 
   return (
     <div className="card-section">
@@ -75,7 +82,7 @@ const Card = () => {
         ))}
       </div>
       <button type="button" className="see-more-btn" onClick={handleExpand}>
-        {expanded >= CardData.length ? (
+        {expanded >= cardItems.length ? (
           <NavLink to="/cars" className="new-search-link">
             Nothing found?{' '}
             <span>
