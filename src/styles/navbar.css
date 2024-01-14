@@ -162,7 +162,7 @@ li a.active {
     border: 1px solid #fff;
   }
 
-  li:last-child {
+  .menu-bar li:last-child {
     position: absolute;
     right: 0;
     margin-right: 0;

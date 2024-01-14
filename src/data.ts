@@ -1,0 +1,77 @@
+export const makeOptions = {
+  label: 'Make',
+  value: [
+    'Acura',
+    'Audi',
+    'BMW',
+    'Buick',
+    'Cadillac',
+    'Chevrolet',
+    'Chrysler',
+    'Dodge',
+    'Ford',
+    'GMC',
+    'Honda',
+    'Hyundai',
+    'Infiniti',
+    'Jeep',
+    'Kia',
+    'Lexus',
+    'Lincoln',
+    'Mazda',
+    'Mercedes-Benz',
+    'Nissan',
+    'Ram',
+    'Subaru',
+    'Toyota',
+    'Volkswagen',
+    'Volvo',
+  ],
+};
+
+export const modelOptions = {
+  label: 'Model',
+  value: [
+    'A3',
+    'A4',
+    'A5',
+    'A6',
+    'A7',
+    'A8',
+    'Q3',
+    'Q5',
+    'Q7',
+    'Q8',
+    'R8',
+    'RS5',
+    'S3',
+    'S4',
+    'S5',
+    'S6',
+    'S7',
+    'S8',
+    'SQ5',
+    'TT',
+  ],
+};
+
+export const yearOptions = {
+  label: 'Year',
+  value: ['2020', '2019', '2018', '2017', '2016', '2015', '2014', '2013'],
+};
+
+export const priceOptions = {
+  label: 'Price',
+  value: [
+    '$10000',
+    '$20000',
+    '$30000',
+    '$40000',
+    '$50000',
+    '$60000',
+    '$70000',
+    '$80000',
+    '$90000',
+    '$100000',
+  ],
+};

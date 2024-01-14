@@ -1,3 +1,5 @@
+import FilterSearch from './FilterSearch';
+import SelectOptions from './SelectOptions';
 import '../styles/SearchForm.css';
 type SeachFormProps = {
   showSearchBox: boolean;
@@ -10,7 +12,12 @@ const SearchForm = ({ showSearchBox }: SeachFormProps) => {
 
   return (
     <div className={`search-form ${className}`}>
-      <h1>Search form is going to be here</h1>
+      <FilterSearch />
+      <div className="select-options">
+        <SelectOptions />
+        <div className="result-btn">12,422 results</div>
+        <div className="refine-search">Refine search</div>
+      </div>
     </div>
   );
 };
