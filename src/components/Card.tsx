@@ -7,6 +7,8 @@ import { FaStar } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
 import { getCardItems } from '../redux/features/card/cardSlice';
 import { AppDispatch } from '../redux/store';
+import ErrorComponent from './ErrorComponent';
+import LoadingComponent from './LoadingComponent';
 
 type RootState = {
   card: {
@@ -31,6 +33,7 @@ type Card = {
   tag: string;
   location: string;
 };
+
 
 const Card = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -69,18 +72,21 @@ const Card = () => {
   const slicedData = data.slice(0, expanded);
 
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return (
+
+      <LoadingComponent />
+)
   }
 
   if (error) {
-    console.log("dsdcsdcsd"+ error);
-    
-    return <div>{error}</div>
+    return (
+      <ErrorComponent error={error} />
+)
   }
 
   return (
     <div className="card-section">
-      <h2>Top Cars</h2>
+      <h2 className='text-2xl my-5'>Top Cars</h2>
       <div className="card-container">
         {slicedData.map((card: Card) => (
           <NavLink to={`cars/${card.id}`} className="card" key={card.id}>
@@ -115,9 +121,9 @@ const Card = () => {
           </NavLink>
         ))}
       </div>
-      <button type="button" className="see-more-btn" onClick={handleExpand}>
+      <button type="button" className="see-more-btn bg-white p-4" onClick={handleExpand}>
         {expanded >= data.length ? (
-          <NavLink to="/cars" className="new-search-link">
+          <NavLink to="/refine-search" className="new-search-link">
             Nothing found?{' '}
             <span>
               Start a new search <IoIosArrowRoundForward className="icon" />

@@ -7,7 +7,11 @@ import Favorites from './pages/Favorites';
 import Details from './pages/Details';
 import './styles/main.css';
 import NotFound from './pages/NotFound';
-import AddCar from './pages/AddCar';
+import AddCar from './components/AddCar';
+import Language from './pages/Language';
+import RefineSearch from './components/RefineSearch';
+import UsedAndNewCarsDetails from './pages/UsedAndNewCarsDetails';
+import SearchResultPage from './pages/SearchResultPage';
 
 const App = () => {
   return (
@@ -20,9 +24,14 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/cars" element={<Cars />} />
         <Route path="/cars/:id" element={<Details />} />
+        <Route path="/used-and-new-cars" element={<Home />} />
+        <Route path="/used-and-new-cars/:id" element={<UsedAndNewCarsDetails />} />
         <Route path="/trucks" element={<Trucks />} />
         <Route path="/add-car" element={<AddCar />} />
         <Route path="/favorites" element={<Favorites />} />
+        <Route path="/search-result" element={<SearchResultPage />} />
+        <Route path="/refine-search" element={<RefineSearch />} />
+        <Route path="/language" element={<Language />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       </div>

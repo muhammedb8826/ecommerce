@@ -35,7 +35,7 @@ const Navbar = () => {
       </button>
       <ul className={`menu-bar ${toggle ? 'active' : ''}`}>
         <li>
-          <NavLink to="/cars" onClick={() => setToggle(false)}>
+          <NavLink to="/" onClick={() => setToggle(false)}>
             Used and New Cars
           </NavLink>
           <BsArrowRight className="right-arrow" />

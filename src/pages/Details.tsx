@@ -6,6 +6,8 @@ import { AppDispatch } from '../redux/store';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCardItem } from '../redux/features/card/cardSlice';
 import { useEffect } from 'react';
+import LoadingComponent from '../components/LoadingComponent';
+import ErrorComponent from '../components/ErrorComponent';
 
 type RootState = {
   card: {
@@ -38,11 +40,15 @@ const Details = () => {
   }, [dispatch, id]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <LoadingComponent />
+    )
   }
 
   if (error) {
-    console.log(error);
+    return(
+      <ErrorComponent error={error} />
+    )
   }
 
   return (
