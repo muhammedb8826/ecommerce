@@ -6,20 +6,44 @@ import { useState, useEffect } from 'react';
 import { FaStar } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
 import { getCardItems } from '../redux/features/card/cardSlice';
+import { AppDispatch } from '../redux/store';
+
+type RootState = {
+  card: {
+    homePageData: {
+      data: [];
+      isLoading: boolean;
+      error: null;
+    };
+  };
+};
 
 type Favorite = {
   id: string | number;
 };
 
+type Card = {
+  id: string | number;
+  price: number;
+  title: string;
+  description: string;
+  image: string;
+  tag: string;
+  location: string;
+};
+
 const Card = () => {
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
+  const { data, isLoading, error } = useSelector(
+    (store: RootState) => store.card.homePageData
+  );
+
   useEffect(() => {
     dispatch(getCardItems());
-  }, []);
+  }, [dispatch]);
 
   const [expanded, setExpanded] = useState(4);
   const [favorites, setFavorites] = useState<Favorite[]>([]);
-  const { cardItems, isLoading } = useSelector((store) => store.card);
 
   const handleExpand = () => {
     setExpanded(expanded + 4);
@@ -42,13 +66,23 @@ const Card = () => {
     setFavorites(newFavorites);
   };
 
-  const slicedData = cardItems.slice(0, expanded);
+  const slicedData = data.slice(0, expanded);
+
+  if (isLoading) {
+    return <h1>Loading...</h1>;
+  }
+
+  if (error) {
+    console.log("dsdcsdcsd"+ error);
+    
+    return <div>{error}</div>
+  }
 
   return (
     <div className="card-section">
       <h2>Top Cars</h2>
       <div className="card-container">
-        {slicedData.map((card) => (
+        {slicedData.map((card: Card) => (
           <NavLink to={`cars/${card.id}`} className="card" key={card.id}>
             <div className="card-image">
               <img src={card.image} alt="" />
@@ -82,7 +116,7 @@ const Card = () => {
         ))}
       </div>
       <button type="button" className="see-more-btn" onClick={handleExpand}>
-        {expanded >= cardItems.length ? (
+        {expanded >= data.length ? (
           <NavLink to="/cars" className="new-search-link">
             Nothing found?{' '}
             <span>

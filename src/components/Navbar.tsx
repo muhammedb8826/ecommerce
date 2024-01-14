@@ -47,6 +47,12 @@ const Navbar = () => {
           <BsArrowRight className="right-arrow" />
         </li>
         <li>
+          <NavLink to="/add-car" onClick={() => setToggle(false)}>
+            Add Cars
+          </NavLink>
+          <BsArrowRight className="right-arrow" />
+        </li>
+        <li>
           <NavLink to="/language" onClick={() => setToggle(false)}>
             English <IoIosArrowDown className="down-arrow"></IoIosArrowDown>
           </NavLink>
